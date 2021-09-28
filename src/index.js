@@ -1,9 +1,15 @@
 // require neccessary modules
 const app = require("express")()
 
-import info from './controllers/info';
-import audioStream from './controllers/audioStream';
+const info = require('./controllers/info');
+const audioStream = require('./controllers/audioStream');
+const Discord = require("discord.js");
 
+const client = new Discord.Client({ intents: ["GUILDS"] });
+require('dotenv').config()
+
+
+client.login(process.env.BOT_TOKEN);
 
 // Routes
 app.get("/info", info)

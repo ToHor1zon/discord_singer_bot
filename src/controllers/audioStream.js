@@ -1,7 +1,7 @@
 const ytdl = require("ytdl-core");
 
 //  Send Audio stream  
-export default async (req, res) => {
+module.exports = async (req, res) => {
   try {
       const { videoId } = req.params
       const isValid = ytdl.validateID(videoId)

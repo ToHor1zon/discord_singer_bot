@@ -1,5 +1,5 @@
 // Controller Function to get meta details from Youtube Url
-export default async (req, res) => {
+module.exports = async (req, res) => {
   try {
       const { url } = req.query
       const videoId = ytdl.getURLVideoID(url)
